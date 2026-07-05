@@ -33,134 +33,64 @@
   }
   a{color:var(--teal-deep);}
 
-  /* ---------- Sticky progress strip ---------- */
-  .strip{
-    position:sticky; top:0; z-index:40;
-    backdrop-filter:saturate(160%) blur(10px);
-    background:rgba(255,255,255,.82);
-    border-bottom:1px solid var(--line);
-  }
-  .strip-inner{
-    max-width:920px; margin:0 auto; padding:10px 20px;
-    display:flex; align-items:center; gap:14px;
-  }
-  .strip-label{
-    font-family:"Space Grotesk",sans-serif; font-weight:600;
-    font-size:13px; color:var(--ink); white-space:nowrap; letter-spacing:.2px;
-  }
+  .strip{position:sticky; top:0; z-index:40; backdrop-filter:saturate(160%) blur(10px);
+    background:rgba(255,255,255,.82); border-bottom:1px solid var(--line);}
+  .strip-inner{max-width:920px; margin:0 auto; padding:10px 20px; display:flex; align-items:center; gap:14px;}
+  .strip-label{font-family:"Space Grotesk",sans-serif; font-weight:600; font-size:13px; color:var(--ink); white-space:nowrap; letter-spacing:.2px;}
   .strip-bar{flex:1; height:9px; border-radius:99px; background:var(--line); overflow:hidden;}
-  .strip-fill{
-    height:100%; width:0%;
-    background:linear-gradient(90deg,var(--teal),var(--indigo));
-    border-radius:99px; transition:width .5s cubic-bezier(.2,.7,.3,1);
-  }
-  .strip-pct{
-    font-family:"IBM Plex Mono",monospace; font-weight:600;
-    font-size:13px; color:var(--teal-deep); min-width:42px; text-align:right;
-  }
+  .strip-fill{height:100%; width:0%; background:linear-gradient(90deg,var(--teal),var(--indigo)); border-radius:99px; transition:width .5s cubic-bezier(.2,.7,.3,1);}
+  .strip-pct{font-family:"IBM Plex Mono",monospace; font-weight:600; font-size:13px; color:var(--teal-deep); min-width:42px; text-align:right;}
 
   .wrap{max-width:920px; margin:0 auto; padding:28px 20px 80px;}
 
-  /* ---------- Hero ---------- */
-  .hero{
-    background:var(--card); border:1px solid var(--line); border-radius:22px;
-    padding:28px 28px 26px; box-shadow:var(--shadow-lg);
-    position:relative; overflow:hidden;
-  }
-  .hero::before{
-    content:""; position:absolute; inset:0 0 auto 0; height:4px;
-    background:linear-gradient(90deg,var(--teal),var(--indigo),var(--amber));
-  }
-  .eyebrow{
-    font-family:"IBM Plex Mono",monospace; font-size:12px; font-weight:600;
-    letter-spacing:2px; text-transform:uppercase; color:var(--teal);
-    display:flex; align-items:center; gap:8px;
-  }
+  .hero{background:var(--card); border:1px solid var(--line); border-radius:22px; padding:28px 28px 26px; box-shadow:var(--shadow-lg); position:relative; overflow:hidden;}
+  .hero::before{content:""; position:absolute; inset:0 0 auto 0; height:4px; background:linear-gradient(90deg,var(--teal),var(--indigo),var(--amber));}
+  .eyebrow{font-family:"IBM Plex Mono",monospace; font-size:12px; font-weight:600; letter-spacing:2px; text-transform:uppercase; color:var(--teal); display:flex; align-items:center; gap:8px;}
   .eyebrow .dot{width:7px;height:7px;border-radius:99px;background:var(--amber);box-shadow:0 0 0 4px var(--amber-soft);}
-  h1{
-    font-family:"Space Grotesk",sans-serif; font-weight:700;
-    font-size:clamp(26px,4.6vw,38px); line-height:1.08; color:var(--ink);
-    margin:14px 0 8px; letter-spacing:-.5px;
-  }
-  .sub{color:var(--muted); font-size:15px; max-width:56ch;}
+  h1{font-family:"Space Grotesk",sans-serif; font-weight:700; font-size:clamp(26px,4.6vw,38px); line-height:1.08; color:var(--ink); margin:14px 0 8px; letter-spacing:-.5px;}
+  .sub{color:var(--muted); font-size:15px; max-width:58ch;}
 
-  /* ---------- Countdown ---------- */
-  .count{
-    margin-top:22px; padding:18px; border-radius:16px;
-    background:linear-gradient(135deg,#0f766e,#155e75 55%,#4338ca);
-    color:#fff; position:relative; overflow:hidden;
-  }
-  .count::after{
-    content:""; position:absolute; right:-40px; top:-40px; width:180px; height:180px;
-    background:radial-gradient(circle,rgba(245,158,11,.35),transparent 70%);
-  }
-  .count-top{
-    display:flex; justify-content:space-between; align-items:baseline; gap:10px;
-    font-size:12.5px; letter-spacing:.4px; color:#c7f5ec; margin-bottom:12px;
-    font-family:"IBM Plex Mono",monospace;
-  }
+  .count{margin-top:22px; padding:18px; border-radius:16px; background:linear-gradient(135deg,#0f766e,#155e75 55%,#4338ca); color:#fff; position:relative; overflow:hidden;}
+  .count::after{content:""; position:absolute; right:-40px; top:-40px; width:180px; height:180px; background:radial-gradient(circle,rgba(245,158,11,.35),transparent 70%);}
+  .count-top{display:flex; justify-content:space-between; align-items:baseline; gap:10px; font-size:12.5px; letter-spacing:.4px; color:#c7f5ec; margin-bottom:12px; font-family:"IBM Plex Mono",monospace;}
   .count-top .finish{color:#fde9c8;}
   .clock{display:flex; gap:10px; flex-wrap:wrap;}
-  .unit{
-    flex:1; min-width:64px; text-align:center;
-    background:rgba(255,255,255,.09); border:1px solid rgba(255,255,255,.14);
-    border-radius:12px; padding:12px 6px;
-  }
-  .unit .n{
-    font-family:"IBM Plex Mono",monospace; font-weight:600;
-    font-size:clamp(22px,5vw,30px); line-height:1; color:#fff;
-    font-variant-numeric:tabular-nums;
-  }
-  .unit .l{
-    font-size:10.5px; letter-spacing:1.5px; text-transform:uppercase;
-    color:#a9e9de; margin-top:7px;
-  }
+  .unit{flex:1; min-width:64px; text-align:center; background:rgba(255,255,255,.09); border:1px solid rgba(255,255,255,.14); border-radius:12px; padding:12px 6px;}
+  .unit .n{font-family:"IBM Plex Mono",monospace; font-weight:600; font-size:clamp(22px,5vw,30px); line-height:1; color:#fff; font-variant-numeric:tabular-nums;}
+  .unit .l{font-size:10.5px; letter-spacing:1.5px; text-transform:uppercase; color:#a9e9de; margin-top:7px;}
 
-  /* ---------- Overall progress ---------- */
-  .overall{
-    margin-top:18px; display:flex; align-items:center; gap:16px; flex-wrap:wrap;
-  }
+  .overall{margin-top:18px; display:flex; align-items:center; gap:16px; flex-wrap:wrap;}
   .overall .track{flex:1; min-width:200px; height:12px; border-radius:99px; background:var(--line); overflow:hidden;}
-  .overall .fill{height:100%; width:0%; border-radius:99px;
-    background:linear-gradient(90deg,var(--teal),var(--indigo)); transition:width .5s cubic-bezier(.2,.7,.3,1);}
+  .overall .fill{height:100%; width:0%; border-radius:99px; background:linear-gradient(90deg,var(--teal),var(--indigo)); transition:width .5s cubic-bezier(.2,.7,.3,1);}
   .overall .meta{font-family:"IBM Plex Mono",monospace; font-size:13px; color:var(--body);}
   .overall .meta b{color:var(--teal-deep);}
 
   .toolbar{display:flex; gap:10px; margin-top:16px; flex-wrap:wrap;}
-  .btn{
-    font-family:"Space Grotesk",sans-serif; font-weight:600; font-size:13px;
-    border:1px solid var(--line); background:#fff; color:var(--body);
-    padding:8px 14px; border-radius:10px; cursor:pointer; transition:.15s;
-  }
+  .btn{font-family:"Space Grotesk",sans-serif; font-weight:600; font-size:13px; border:1px solid var(--line); background:#fff; color:var(--body); padding:8px 14px; border-radius:10px; cursor:pointer; transition:.15s;}
   .btn:hover{border-color:var(--teal); color:var(--teal-deep); transform:translateY(-1px);}
   .btn.reset:hover{border-color:#e11d48; color:#e11d48;}
 
-  /* ---------- Week cards ---------- */
+  .links{margin-top:16px; padding-top:16px; border-top:1px solid var(--line); display:flex; flex-wrap:wrap; gap:8px; align-items:center;}
+  .links-label{font-family:"IBM Plex Mono",monospace; font-size:11px; letter-spacing:1px; text-transform:uppercase; color:var(--muted); margin-right:4px;}
+  .links a{font-family:"Space Grotesk",sans-serif; font-weight:600; font-size:12.5px; color:var(--teal-deep); background:var(--teal-soft); padding:6px 11px; border-radius:8px; text-decoration:none; transition:.15s;}
+  .links a:hover{background:var(--teal); color:#fff; transform:translateY(-1px);}
+
+  .legend{margin-top:14px; font-size:13px; color:var(--muted); line-height:1.6;}
+  .legend .spec{margin:0 2px;}
+
+  .tasklink{margin-left:auto; align-self:flex-start; margin-top:1px; flex:none; font-family:"IBM Plex Mono",monospace; font-size:11px; font-weight:600; color:var(--teal-deep); background:var(--teal-soft); padding:3px 9px; border-radius:7px; text-decoration:none; white-space:nowrap; transition:.15s;}
+  .tasklink:hover{background:var(--teal); color:#fff;}
+
   .weeks{margin-top:26px; display:flex; flex-direction:column; gap:16px;}
-  .week{
-    background:var(--card); border:1px solid var(--line); border-radius:18px;
-    box-shadow:var(--shadow); overflow:hidden; transition:box-shadow .2s, border-color .2s;
-  }
+  .week{background:var(--card); border:1px solid var(--line); border-radius:18px; box-shadow:var(--shadow); overflow:hidden; transition:box-shadow .2s, border-color .2s;}
   .week.now{border-color:var(--amber); box-shadow:0 0 0 3px var(--amber-soft), var(--shadow);}
-  .whead{
-    display:flex; align-items:center; gap:16px; padding:18px 20px; cursor:pointer;
-    user-select:none;
-  }
-  .wno{
-    font-family:"Space Grotesk",sans-serif; font-weight:700; font-size:15px;
-    width:44px; height:44px; flex:none; border-radius:12px; color:#fff;
-    display:grid; place-items:center; letter-spacing:.5px;
-    background:linear-gradient(135deg,var(--teal),var(--teal-deep));
-  }
+  .whead{display:flex; align-items:center; gap:16px; padding:18px 20px; cursor:pointer; user-select:none;}
+  .wno{font-family:"Space Grotesk",sans-serif; font-weight:700; font-size:15px; width:44px; height:44px; flex:none; border-radius:12px; color:#fff; display:grid; place-items:center; letter-spacing:.5px; background:linear-gradient(135deg,var(--teal),var(--teal-deep));}
   .week:nth-child(even) .wno{background:linear-gradient(135deg,var(--indigo),#4338ca);}
   .wtitles{flex:1; min-width:0;}
   .wdate{font-family:"IBM Plex Mono",monospace; font-size:11.5px; letter-spacing:.3px; color:var(--muted); text-transform:uppercase;}
   .wtitle{font-family:"Space Grotesk",sans-serif; font-weight:600; font-size:17px; color:var(--ink); margin-top:2px; line-height:1.2;}
-  .wtag{
-    display:inline-block; margin-top:5px; font-size:10.5px; font-weight:600;
-    letter-spacing:1px; text-transform:uppercase; color:var(--amber);
-    background:var(--amber-soft); padding:2px 8px; border-radius:99px;
-  }
+  .wtag{display:inline-block; margin-top:5px; font-size:10.5px; font-weight:600; letter-spacing:1px; text-transform:uppercase; color:var(--amber); background:var(--amber-soft); padding:2px 8px; border-radius:99px;}
   .wright{display:flex; align-items:center; gap:12px; flex:none;}
   .wpct{font-family:"IBM Plex Mono",monospace; font-weight:600; font-size:14px; color:var(--teal-deep); min-width:40px; text-align:right;}
   .wprog{width:74px; height:8px; border-radius:99px; background:var(--line); overflow:hidden;}
@@ -173,31 +103,24 @@
 
   .section{padding:16px 0 6px;}
   .section + .section{border-top:1px dashed var(--line);}
-  .shead{
-    font-family:"Space Grotesk",sans-serif; font-weight:600; font-size:13px;
-    letter-spacing:.3px; color:var(--indigo); text-transform:uppercase;
-    display:flex; align-items:center; gap:9px; margin-bottom:10px;
-  }
-  .shead .sq{width:10px;height:10px;border-radius:3px;background:var(--indigo-soft);border:2px solid var(--indigo);}
+  .shead{font-family:"Space Grotesk",sans-serif; font-weight:600; font-size:13px; letter-spacing:.3px; color:var(--indigo); text-transform:uppercase; display:flex; align-items:center; gap:9px; margin-bottom:10px;}
+  .shead .sq{width:10px;height:10px;border-radius:3px;background:var(--indigo-soft);border:2px solid var(--indigo); flex:none;}
 
   .task{display:flex; align-items:flex-start; gap:12px; padding:8px 8px; border-radius:10px; transition:background .12s;}
   .task:hover{background:var(--line-soft);}
-  .task input[type=checkbox]{
-    appearance:none; -webkit-appearance:none; margin:2px 0 0; flex:none;
-    width:20px; height:20px; border:2px solid var(--faint); border-radius:6px;
-    cursor:pointer; position:relative; transition:.15s; background:#fff;
-  }
+  .task input[type=checkbox]{appearance:none; -webkit-appearance:none; margin:2px 0 0; flex:none; width:20px; height:20px; border:2px solid var(--faint); border-radius:6px; cursor:pointer; position:relative; transition:.15s; background:#fff;}
   .task input[type=checkbox]:hover{border-color:var(--teal);}
   .task input[type=checkbox]:checked{background:var(--teal); border-color:var(--teal);}
-  .task input[type=checkbox]:checked::after{
-    content:""; position:absolute; left:6px; top:2px; width:5px; height:10px;
-    border:solid #fff; border-width:0 2.5px 2.5px 0; transform:rotate(45deg);
-  }
+  .task input[type=checkbox]:checked::after{content:""; position:absolute; left:6px; top:2px; width:5px; height:10px; border:solid #fff; border-width:0 2.5px 2.5px 0; transform:rotate(45deg);}
   .task input[type=checkbox]:focus-visible{outline:3px solid var(--amber-soft); outline-offset:2px;}
   .task label{font-size:14.5px; color:var(--body); cursor:pointer; line-height:1.5;}
   .task input:checked + label{color:var(--faint); text-decoration:line-through; text-decoration-color:var(--teal);}
-  .rp{display:inline-block; font-family:"IBM Plex Mono",monospace; font-size:10.5px; font-weight:600;
-    color:var(--teal-deep); background:var(--teal-soft); padding:1px 6px; border-radius:5px; margin-right:6px; letter-spacing:.3px;}
+  .task input:checked + label .spec,.task input:checked + label .rp{opacity:.5;}
+
+  .spec{display:inline-block; font-family:"IBM Plex Mono",monospace; font-size:10.5px; font-weight:600; color:var(--indigo); background:var(--indigo-soft); padding:1px 6px; border-radius:5px; margin-right:6px; letter-spacing:.2px; vertical-align:middle;}
+  .rp{display:inline-block; font-family:"IBM Plex Mono",monospace; font-size:10.5px; font-weight:600; color:var(--teal-deep); background:var(--teal-soft); padding:1px 6px; border-radius:5px; margin-right:6px; letter-spacing:.3px; vertical-align:middle;}
+  .task label q{font-style:normal; color:var(--ink); quotes:"“" "”";}
+  .task label q::before{content:open-quote;} .task label q::after{content:close-quote;}
 
   .footer{margin-top:28px; text-align:center; color:var(--faint); font-size:12.5px; line-height:1.7;}
   .footer b{color:var(--muted);}
@@ -230,12 +153,12 @@
   <header class="hero">
     <div class="eyebrow"><span class="dot"></span> AQA AS Biology · 7401 · Year 1</div>
     <h1>Summer Catch-Up Plan</h1>
-    <p class="sub">Eight weeks to master every Year 1 topic — Sections 1 to 4. Work through each week in order, tick tasks as you finish them, and your progress saves automatically on this device.</p>
+    <p class="sub">Nine weeks to master every Year 1 topic — Sections 1 to 4 — and work through the full set of AS past papers. Go through each week in order, tick tasks as you finish them, and your progress saves automatically on this device.</p>
 
     <div class="count">
       <div class="count-top">
         <span>Time remaining until the last day</span>
-        <span class="finish">Finish · Sun 30 Aug 2026</span>
+        <span class="finish">Finish · Sun 6 Sep 2026</span>
       </div>
       <div class="clock">
         <div class="unit"><div class="n" id="cd-d">00</div><div class="l">Days</div></div>
@@ -256,64 +179,79 @@
       <button class="btn" id="jumpNow">Jump to this week</button>
       <button class="btn reset" id="resetBtn">Reset progress</button>
     </div>
+
+    <div class="links">
+      <span class="links-label">Key links</span>
+      <a href="https://www.physicsandmathstutor.com/biology-revision/a-level-aqa/" target="_blank" rel="noopener noreferrer">PMT questions by topic</a>
+      <a href="https://www.physicsandmathstutor.com/past-papers/a-level-biology/aqa-paper-1-as/" target="_blank" rel="noopener noreferrer">AS Paper 1 papers</a>
+      <a href="https://www.physicsandmathstutor.com/past-papers/a-level-biology/aqa-paper-2-as/" target="_blank" rel="noopener noreferrer">AS Paper 2 papers</a>
+      <a href="https://www.aqa.org.uk/subjects/biology/as-level/biology-7401/assessment-resources" target="_blank" rel="noopener noreferrer">AQA examiner reports</a>
+      <a href="https://www.physicsandmathstutor.com/biology-revision/a-level-aqa/practical-skills/" target="_blank" rel="noopener noreferrer">PMT practical skills</a>
+    </div>
+
+    <p class="legend">Every task shows its AQA spec reference (e.g. <span class="spec">3.1.2</span>) so you can see exactly which point it covers. If a task quotes the spec, it's shown in “quote marks”. This plan covers the whole AS spec (Sections 3.1–3.4) and nothing off-spec — if it's not here, it isn't examinable at AS.</p>
   </header>
 
   <main class="weeks" id="weeks"></main>
 
   <p class="footer">
-    Built for your AQA AS Biology (7401) revision · Practice questions from <b>PMT Questions by Topic</b><br>
-    Progress is stored on this device only. Tip: open this in Chrome and use <b>Install app</b> to add it to your shelf.
+    Built for your AQA AS Biology (7401) revision · Spec references from the AQA 7401/7402 specification · Topic questions &amp; past papers via <b>PMT</b> · Examiner reports from <b>AQA</b><br>
+    Links open in a new tab. Progress is stored on this device only. Tip: open this in Chrome and use <b>Install app</b> to add it to your shelf.
   </p>
 </div>
 
 <script>
 /* ============================================================
-   DATA — every task carries a STABLE id (wXyN). Never reorder
-   or reuse ids. When editing wording, keep the id; only new
-   tasks get new ids. Progress persists against these ids.
+   DATA — every task carries a STABLE id (wXyN) plus its AQA
+   spec reference. Never reorder or reuse ids. When editing
+   wording, keep the id; only new tasks get new ids.
    ============================================================ */
-const FINISH = new Date("2026-08-30T23:59:59");
+const FINISH = new Date("2026-09-06T23:59:59");
+
+const L = {
+  t1:"https://www.physicsandmathstutor.com/biology-revision/a-level-aqa/biological-molecules/",
+  t2:"https://www.physicsandmathstutor.com/biology-revision/a-level-aqa/cells/",
+  t3:"https://www.physicsandmathstutor.com/biology-revision/a-level-aqa/organisms-exchange-substances/",
+  t4:"https://www.physicsandmathstutor.com/biology-revision/a-level-aqa/genetics-biodiversity-classification/",
+  prac:"https://www.physicsandmathstutor.com/biology-revision/a-level-aqa/practical-skills/",
+  p1:"https://www.physicsandmathstutor.com/past-papers/a-level-biology/aqa-paper-1-as/",
+  p2:"https://www.physicsandmathstutor.com/past-papers/a-level-biology/aqa-paper-2-as/",
+  aqa:"https://www.aqa.org.uk/subjects/biology/as-level/biology-7401/assessment-resources"
+};
 
 const WEEKS = [
 {
   no:1, dateStart:"2026-07-06", date:"W/C Mon 6 Jul — Sun 12 Jul",
   title:"Biological Molecules I — Carbohydrates & Lipids",
   sections:[
-    { head:"A · Monomers, polymers & bonds", tasks:[
-      {id:"w1a1", t:"Define monomer, polymer and macromolecule, with one example of each."},
-      {id:"w1a2", t:"Learn condensation reactions: monomers join, a bond forms, and a molecule of water is released."},
-      {id:"w1a3", t:"Learn hydrolysis reactions: a bond is broken by adding a molecule of water."},
-      {id:"w1a4", t:"Draw one summary diagram contrasting condensation with hydrolysis."},
+    { head:"A · Monomers, polymers & bonds · 3.1.1", tasks:[
+      {id:"w1a1", spec:"3.1.1", t:"Define monomer and polymer, and name the spec's three example monomers: monosaccharides, amino acids and nucleotides."},
+      {id:"w1a2", spec:"3.1.1", t:"Learn that a condensation reaction joins two molecules, forms a chemical bond and <q>involves the elimination of a molecule of water</q>."},
+      {id:"w1a3", spec:"3.1.1", t:"Learn that a hydrolysis reaction breaks a chemical bond between two molecules and <q>involves the use of a water molecule</q>."},
+      {id:"w1a4", spec:"3.1.1", t:"Draw one summary diagram contrasting condensation with hydrolysis."},
     ]},
-    { head:"B · Carbohydrates", tasks:[
-      {id:"w1b1", t:"Learn the monosaccharides glucose, fructose and galactose."},
-      {id:"w1b2", t:"Draw α-glucose and β-glucose and state the structural difference (OH position on carbon 1)."},
-      {id:"w1b3", t:"Learn how a glycosidic bond forms by condensation between two monosaccharides."},
-      {id:"w1b4", t:"Learn the three disaccharides: maltose, sucrose and lactose (and which monomers form each)."},
-      {id:"w1b5", t:"Learn starch structure (amylose helix + branched amylopectin) and relate it to energy storage in plants."},
-      {id:"w1b6", t:"Learn glycogen structure (highly branched) and relate it to energy storage in animals."},
-      {id:"w1b7", t:"Learn cellulose structure (β-glucose, straight chains, H-bonds forming microfibrils) and relate it to cell-wall strength."},
-      {id:"w1b8", t:"Make a comparison table: starch vs glycogen vs cellulose (monomer, bonds, structure, function)."},
+    { head:"B · Carbohydrates · 3.1.2", tasks:[
+      {id:"w1b1", spec:"3.1.2", t:"Learn the common monosaccharides: glucose, galactose and fructose."},
+      {id:"w1b2", spec:"3.1.2", t:"Draw the two isomers α-glucose and β-glucose and state the structural difference."},
+      {id:"w1b3", spec:"3.1.2", t:"Learn that a condensation reaction between two monosaccharides forms a glycosidic bond."},
+      {id:"w1b4", spec:"3.1.2", t:"Learn the three disaccharides: maltose (glucose + glucose), sucrose (glucose + fructose), lactose (glucose + galactose)."},
+      {id:"w1b5", spec:"3.1.2", t:"Learn that glycogen and starch form by condensation of α-glucose, and cellulose by condensation of β-glucose."},
+      {id:"w1b6", spec:"3.1.2", t:"Learn the basic structure and functions of glycogen, starch and cellulose, and relate structure to function in animal and plant cells."},
+      {id:"w1b7", spec:"3.1.2", t:"Learn the biochemical tests: Benedict's for reducing and non-reducing sugars, and iodine/potassium iodide for starch."},
     ]},
-    { head:"C · Biochemical tests — sugars & starch", tasks:[
-      {id:"w1c1", t:"Learn the Benedict's test for reducing sugars (blue → brick-red on heating)."},
-      {id:"w1c2", t:"Learn how to test for a non-reducing sugar (boil with acid, neutralise, then Benedict's)."},
-      {id:"w1c3", t:"Learn the iodine test for starch (orange-brown → blue-black)."},
+    { head:"C · Lipids · 3.1.3", tasks:[
+      {id:"w1d1", spec:"3.1.3", t:"Learn that a triglyceride forms by condensation of one glycerol and three fatty acids, and that glycerol + fatty acid forms an ester bond."},
+      {id:"w1d2", spec:"3.1.3", t:"Recognise saturated and unsaturated fatty acids from diagrams (the R-group may be saturated or unsaturated)."},
+      {id:"w1d3", spec:"3.1.3", t:"Learn that in a phospholipid, one fatty acid of a triglyceride is substituted by a phosphate-containing group."},
+      {id:"w1d4", spec:"3.1.3", t:"Explain the different properties of triglycerides and phospholipids in relation to their structures."},
+      {id:"w1d5", spec:"3.1.3", t:"Learn the emulsion test for lipids."},
     ]},
-    { head:"D · Lipids", tasks:[
-      {id:"w1d1", t:"Learn triglyceride structure: 1 glycerol + 3 fatty acids joined by ester bonds via condensation."},
-      {id:"w1d2", t:"Learn the difference between saturated and unsaturated fatty acids (C=C double bonds)."},
-      {id:"w1d3", t:"Learn phospholipid structure (hydrophilic head, hydrophobic tails)."},
-      {id:"w1d4", t:"Relate triglyceride structure to function (energy store, insoluble, many C–H bonds)."},
-      {id:"w1d5", t:"Relate phospholipid structure to bilayer formation in membranes."},
-      {id:"w1d6", t:"Learn the emulsion test for lipids (white emulsion)."},
-    ]},
-    { head:"E · Practice & consolidation", tasks:[
-      {id:"w1e1", t:"Complete PMT “Carbohydrates” Questions by Topic and self-mark."},
-      {id:"w1e2", t:"Complete PMT “Lipids” Questions by Topic and self-mark."},
-      {id:"w1e3", t:"Make flashcards for every key term covered this week."},
-      {id:"w1e4", t:"Write a one-page summary sheet for Biological Molecules I from memory."},
-      {id:"w1e5", t:"Redo every question you got wrong until you can do it unaided."},
+    { head:"D · Practice & consolidation · 3.1.1–3.1.3", tasks:[
+      {id:"w1e1", spec:"3.1.2", t:"Complete PMT “Carbohydrates” Questions by Topic and self-mark.", url:L.t1, linkText:"PMT ↗"},
+      {id:"w1e2", spec:"3.1.3", t:"Complete PMT “Lipids” Questions by Topic and self-mark.", url:L.t1, linkText:"PMT ↗"},
+      {id:"w1e3", spec:"3.1", t:"Make flashcards for every key term covered this week."},
+      {id:"w1e4", spec:"3.1", t:"Write a one-page summary sheet for Biological Molecules I from memory."},
+      {id:"w1e5", spec:"3.1", t:"Redo every question you got wrong until you can do it unaided."},
     ]},
   ]
 },
@@ -321,50 +259,48 @@ const WEEKS = [
   no:2, dateStart:"2026-07-13", date:"W/C Mon 13 Jul — Sun 19 Jul",
   title:"Biological Molecules II — Proteins, Enzymes & Nucleic Acids",
   sections:[
-    { head:"A · Proteins", tasks:[
-      {id:"w2a1", t:"Learn the general structure of an amino acid (central C, amino group, carboxyl group, R group, H)."},
-      {id:"w2a2", t:"Learn how a peptide bond forms by condensation (dipeptide → polypeptide)."},
-      {id:"w2a3", t:"Learn primary structure (the sequence of amino acids)."},
-      {id:"w2a4", t:"Learn secondary structure (α-helix and β-pleated sheet held by hydrogen bonds)."},
-      {id:"w2a5", t:"Learn tertiary structure (3D shape held by H-bonds, ionic bonds and disulfide bridges)."},
-      {id:"w2a6", t:"Learn quaternary structure (more than one polypeptide chain, e.g. haemoglobin)."},
-      {id:"w2a7", t:"Learn the biuret test for proteins (blue → purple/lilac)."},
+    { head:"A · Proteins · 3.1.4.1", tasks:[
+      {id:"w2a1", spec:"3.1.4.1", t:"Learn the general structure of an amino acid (amine group, carboxyl group, R group); the 20 amino acids differ only in their R group."},
+      {id:"w2a2", spec:"3.1.4.1", t:"Learn that a condensation reaction between two amino acids forms a peptide bond (dipeptides, then polypeptides)."},
+      {id:"w2a3", spec:"3.1.4.1", t:"Learn that a functional protein may contain one or more polypeptides."},
+      {id:"w2a4", spec:"3.1.4.1", t:"Learn the role of hydrogen bonds, ionic bonds and disulfide bridges in the structure of proteins."},
+      {id:"w2a5", spec:"3.1.4.1", t:"Learn the relationship between primary, secondary, tertiary and quaternary structure and protein function."},
+      {id:"w2a6", spec:"3.1.4.1", t:"Learn the biuret test for proteins."},
     ]},
-    { head:"B · Enzymes", tasks:[
-      {id:"w2b1", t:"Learn that enzymes are biological catalysts that lower activation energy."},
-      {id:"w2b2", t:"Learn the induced-fit model and how it differs from lock-and-key."},
-      {id:"w2b3", t:"Learn the formation and role of the enzyme–substrate complex."},
-      {id:"w2b4", t:"Learn and explain the effect of temperature (including denaturation)."},
-      {id:"w2b5", t:"Learn and explain the effect of pH."},
-      {id:"w2b6", t:"Learn and explain the effect of substrate concentration (limiting factors)."},
-      {id:"w2b7", t:"Learn and explain the effect of enzyme concentration."},
-      {id:"w2b8", t:"Learn competitive inhibition (similar shape, binds active site)."},
-      {id:"w2b9", t:"Learn non-competitive inhibition (binds elsewhere, alters active site)."},
-      {id:"w2b10", t:"RP1 — Learn the method for investigating the effect of a named variable on enzyme activity.", rp:"RP1"},
+    { head:"B · Enzymes · 3.1.4.2", tasks:[
+      {id:"w2b1", spec:"3.1.4.2", t:"Learn that each enzyme lowers the activation energy of the reaction it catalyses."},
+      {id:"w2b2", spec:"3.1.4.2", t:"Learn the induced-fit model of enzyme action (and appreciate how models have changed over time)."},
+      {id:"w2b3", spec:"3.1.4.2", t:"Learn how the active site's tertiary structure gives specificity and forms the enzyme-substrate complex."},
+      {id:"w2b4", spec:"3.1.4.2", t:"Learn and explain the effect of temperature on the rate of enzyme-controlled reactions."},
+      {id:"w2b5", spec:"3.1.4.2", t:"Learn and explain the effect of pH."},
+      {id:"w2b6", spec:"3.1.4.2", t:"Learn and explain the effect of substrate concentration."},
+      {id:"w2b7", spec:"3.1.4.2", t:"Learn and explain the effect of enzyme concentration."},
+      {id:"w2b8", spec:"3.1.4.2", t:"Learn the effect of competitive and of non-competitive inhibitors."},
+      {id:"w2b10", spec:"3.1.4.2", rp:"RP1", t:"RP1 — Investigation into the effect of a named variable on the rate of an enzyme-controlled reaction."},
     ]},
-    { head:"C · Nucleic acids — DNA & RNA", tasks:[
-      {id:"w2c1", t:"Learn the three components of a nucleotide (pentose sugar, phosphate, nitrogen-containing base)."},
-      {id:"w2c2", t:"Learn the four DNA bases and complementary base pairing (A–T, C–G)."},
-      {id:"w2c3", t:"Learn how a phosphodiester bond forms by condensation."},
-      {id:"w2c4", t:"Learn DNA structure (double helix, antiparallel strands, 2 H-bonds A–T, 3 H-bonds C–G)."},
-      {id:"w2c5", t:"Learn RNA structure (ribose, uracil, single strand, shorter) and compare with DNA."},
-      {id:"w2c6", t:"Learn semi-conservative replication (helicase, DNA polymerase, template strands)."},
-      {id:"w2c7", t:"Learn the Meselson–Stahl experiment as evidence for semi-conservative replication."},
+    { head:"C · Nucleic acids: DNA & RNA · 3.1.5.1", tasks:[
+      {id:"w2c1", spec:"3.1.5.1", t:"Learn that DNA holds genetic information and RNA transfers it to the ribosomes; ribosomes are formed from RNA and proteins."},
+      {id:"w2c2", spec:"3.1.5.1", t:"Learn that a nucleotide is formed from a pentose, a nitrogen-containing organic base and a phosphate group."},
+      {id:"w2c3", spec:"3.1.5.1", t:"Learn the DNA nucleotide (deoxyribose; base A, C, G or T) and the RNA nucleotide (ribose; base A, C, G or U)."},
+      {id:"w2c4", spec:"3.1.5.1", t:"Learn that a condensation reaction between two nucleotides forms a phosphodiester bond."},
+      {id:"w2c5", spec:"3.1.5.1", t:"Learn that DNA is a double helix of two chains held by hydrogen bonds between complementary base pairs; RNA is a relatively short polynucleotide chain."},
     ]},
-    { head:"D · ATP, water & inorganic ions", tasks:[
-      {id:"w2d1", t:"Learn ATP structure (adenine + ribose + 3 phosphates)."},
-      {id:"w2d2", t:"Learn ATP hydrolysis to ADP + Pi and its resynthesis by ATP synthase."},
-      {id:"w2d3", t:"Learn the properties of water (dipole, H-bonding, solvent, high latent heat, metabolite, cohesion)."},
-      {id:"w2d4", t:"Learn the roles of ions: hydrogen (pH), iron (haemoglobin), sodium (co-transport), phosphate (DNA/ATP)."},
+    { head:"D · DNA replication, ATP, water & ions · 3.1.5.2 / 3.1.6 / 3.1.7 / 3.1.8", tasks:[
+      {id:"w2c6", spec:"3.1.5.2", t:"Learn semi-conservative replication: unwinding, breaking H-bonds, role of DNA helicase, base pairing to template strands, and DNA polymerase joining nucleotides."},
+      {id:"w2c7", spec:"3.1.5.2", t:"Be able to evaluate the work of scientists in validating the Watson–Crick model of DNA replication."},
+      {id:"w2d1", spec:"3.1.6", t:"Learn that ATP is a nucleotide derivative formed from ribose, adenine and three phosphate groups."},
+      {id:"w2d2", spec:"3.1.6", t:"Learn hydrolysis of ATP to ADP + Pi by ATP hydrolase (coupled to energy-requiring reactions; Pi can phosphorylate compounds), and resynthesis by ATP synthase."},
+      {id:"w2d3", spec:"3.1.7", t:"Learn water's properties: a metabolite, a solvent, high heat capacity (buffers temperature), large latent heat of vaporisation (cooling), and strong cohesion."},
+      {id:"w2d4", spec:"3.1.8", t:"Learn the roles of ions: hydrogen (pH), iron (component of haemoglobin), sodium (co-transport of glucose and amino acids), phosphate (component of DNA and ATP)."},
     ]},
-    { head:"E · Practice & consolidation", tasks:[
-      {id:"w2e1", t:"Complete PMT “Proteins” Questions by Topic and self-mark."},
-      {id:"w2e2", t:"Complete PMT “Enzymes” Questions by Topic and self-mark."},
-      {id:"w2e3", t:"Complete PMT “Nucleic Acids / DNA & RNA” Questions by Topic and self-mark."},
-      {id:"w2e4", t:"Complete PMT “ATP and Water” Questions by Topic and self-mark."},
-      {id:"w2e5", t:"Make flashcards for every key term covered this week."},
-      {id:"w2e6", t:"Write a one-page summary sheet for Biological Molecules II from memory."},
-      {id:"w2e7", t:"Redo every question you got wrong until you can do it unaided."},
+    { head:"E · Practice & consolidation · 3.1.4–3.1.8", tasks:[
+      {id:"w2e1", spec:"3.1.4.1", t:"Complete PMT “Proteins” Questions by Topic and self-mark.", url:L.t1, linkText:"PMT ↗"},
+      {id:"w2e2", spec:"3.1.4.2", t:"Complete PMT “Enzymes” Questions by Topic and self-mark.", url:L.t1, linkText:"PMT ↗"},
+      {id:"w2e3", spec:"3.1.5", t:"Complete PMT “Nucleic Acids / DNA & RNA” Questions by Topic and self-mark.", url:L.t1, linkText:"PMT ↗"},
+      {id:"w2e4", spec:"3.1.6–3.1.8", t:"Complete PMT “ATP and Water” Questions by Topic and self-mark.", url:L.t1, linkText:"PMT ↗"},
+      {id:"w2e5", spec:"3.1", t:"Make flashcards for every key term covered this week."},
+      {id:"w2e6", spec:"3.1", t:"Write a one-page summary sheet for Biological Molecules II from memory."},
+      {id:"w2e7", spec:"3.1", t:"Redo every question you got wrong until you can do it unaided."},
     ]},
   ]
 },
@@ -372,48 +308,44 @@ const WEEKS = [
   no:3, dateStart:"2026-07-20", date:"W/C Mon 20 Jul — Sun 26 Jul",
   title:"Cells I — Structure, Microscopy & Mitosis",
   sections:[
-    { head:"A · Eukaryotic cell structure", tasks:[
-      {id:"w3a1", t:"Learn the structure and function of the nucleus (envelope, pores, nucleolus, chromatin)."},
-      {id:"w3a2", t:"Learn the structure and function of mitochondria."},
-      {id:"w3a3", t:"Learn the structure and function of chloroplasts."},
-      {id:"w3a4", t:"Learn the structure and function of the Golgi apparatus and Golgi vesicles."},
-      {id:"w3a5", t:"Learn the structure and function of lysosomes."},
-      {id:"w3a6", t:"Learn the structure and function of ribosomes (80S)."},
-      {id:"w3a7", t:"Learn the structure and function of rough and smooth endoplasmic reticulum."},
-      {id:"w3a8", t:"Learn the cell-surface membrane, cell wall and cell vacuole."},
-      {id:"w3a9", t:"Describe the protein-secretion pathway (nucleus → rER → Golgi → vesicle → membrane)."},
+    { head:"A · Eukaryotic cell structure · 3.2.1.1", tasks:[
+      {id:"w3a1", spec:"3.2.1.1", t:"Learn the nucleus (nuclear envelope, chromosomes of protein-bound linear DNA, nucleoli)."},
+      {id:"w3a2", spec:"3.2.1.1", t:"Learn the structure and function of mitochondria."},
+      {id:"w3a3", spec:"3.2.1.1", t:"Learn the structure and function of chloroplasts (in plants and algae)."},
+      {id:"w3a4", spec:"3.2.1.1", t:"Learn the structure and function of the Golgi apparatus and Golgi vesicles."},
+      {id:"w3a5", spec:"3.2.1.1", t:"Learn lysosomes (membrane-bound organelle that releases hydrolytic enzymes)."},
+      {id:"w3a6", spec:"3.2.1.1", t:"Learn the structure and function of ribosomes."},
+      {id:"w3a7", spec:"3.2.1.1", t:"Learn rough and smooth endoplasmic reticulum, and the cell-surface membrane, cell wall and cell vacuole."},
+      {id:"w3a10", spec:"3.2.1.1", t:"Learn that specialised cells are organised into tissues, tissues into organs and organs into systems; apply this to explain cell adaptations."},
+      {id:"w3a9d", spec:"3.2.1.1", t:"Describe the protein-secretion pathway (nucleus → rough ER → Golgi → vesicle → cell-surface membrane)."},
     ]},
-    { head:"B · Prokaryotic cells & viruses", tasks:[
-      {id:"w3b1", t:"Learn the features of prokaryotic cells (circular DNA, 70S ribosomes, murein wall, plasmids, capsule, flagellum)."},
-      {id:"w3b2", t:"Compare prokaryotic and eukaryotic cells in a table."},
-      {id:"w3b3", t:"Learn virus structure (acellular, non-living; nucleic acid, capsid, attachment proteins)."},
+    { head:"B · Prokaryotic cells & viruses · 3.2.1.2", tasks:[
+      {id:"w3b1", spec:"3.2.1.2", t:"Learn how prokaryotic cells differ: no membrane-bound organelles, smaller ribosomes, no nucleus (single circular DNA free in the cytoplasm), murein cell wall. Many also have plasmids, a capsule and flagella."},
+      {id:"w3b3", spec:"3.2.1.2", t:"Learn that viruses are acellular and non-living: genetic material, capsid and attachment protein."},
     ]},
-    { head:"C · Microscopy & cell fractionation", tasks:[
-      {id:"w3c1", t:"Learn the difference between magnification and resolution."},
-      {id:"w3c2", t:"Learn the principles of the optical (light) microscope."},
-      {id:"w3c3", t:"Learn the principles and pros/cons of the TEM and SEM."},
-      {id:"w3c4", t:"Practise the magnification equation (image ÷ actual) with unit conversions."},
-      {id:"w3c5", t:"Learn how to use an eyepiece graticule with a stage micrometer."},
-      {id:"w3c6", t:"Learn cell fractionation: homogenisation, filtration, ultracentrifugation."},
-      {id:"w3c7", t:"Learn why the solution must be cold, isotonic and buffered."},
-      {id:"w3c8", t:"Learn the order organelles settle out by density during ultracentrifugation."},
+    { head:"C · Methods of studying cells · 3.2.1.3", tasks:[
+      {id:"w3c1", spec:"3.2.1.3", t:"Learn the difference between magnification and resolution."},
+      {id:"w3c2", spec:"3.2.1.3", t:"Learn the principles and limitations of optical, transmission electron and scanning electron microscopes."},
+      {id:"w3c4", spec:"3.2.1.3", t:"Use the formula magnification = size of image ÷ size of real object (with unit conversions), and measure the size of an object under an optical microscope."},
+      {id:"w3c6", spec:"3.2.1.3", t:"Learn the principles of cell fractionation and ultracentrifugation to separate cell components."},
+      {id:"w3c9", spec:"3.2.1.3", t:"Appreciate that the scientific community needed time to distinguish artefacts from cell organelles."},
     ]},
-    { head:"D · Cell cycle & mitosis", tasks:[
-      {id:"w3d1", t:"Learn the cell cycle stages (interphase G1/S/G2, mitosis, cytokinesis)."},
-      {id:"w3d2", t:"Learn the events of interphase (DNA replication)."},
-      {id:"w3d3", t:"Learn and describe the stages of mitosis in order (prophase, metaphase, anaphase, telophase)."},
-      {id:"w3d4", t:"Learn how to calculate the mitotic index."},
-      {id:"w3d5", t:"Learn how uncontrolled division leads to tumours/cancer."},
-      {id:"w3d6", t:"Learn binary fission in prokaryotic cells."},
-      {id:"w3d7", t:"RP2 — Learn the method for preparing a stained root-tip squash to observe mitosis.", rp:"RP2"},
+    { head:"D · Cell cycle & mitosis · 3.2.2", tasks:[
+      {id:"w3d1", spec:"3.2.2", t:"Learn that eukaryotic cells that divide show a cell cycle, and that DNA replication occurs during interphase."},
+      {id:"w3d3", spec:"3.2.2", t:"Learn the behaviour of chromosomes in prophase, metaphase, anaphase and telophase, and the role of spindle fibres attached to centromeres in separating chromatids; recognise each stage."},
+      {id:"w3d3b", spec:"3.2.2", t:"Learn that cytokinesis divides the cytoplasm to produce two new cells."},
+      {id:"w3d5", spec:"3.2.2", t:"Learn that mitosis is controlled, that uncontrolled division can lead to tumours and cancers, and that many cancer treatments target the rate of cell division."},
+      {id:"w3d6", spec:"3.2.2", t:"Learn binary fission in prokaryotic cells (replication of circular DNA and plasmids, division of the cytoplasm)."},
+      {id:"w3d6b", spec:"3.2.2", t:"Learn that viruses do not divide; the infected host cell replicates the virus particles."},
+      {id:"w3d7", spec:"3.2.2", rp:"RP2", t:"RP2 — Stained root-tip squashes; use an optical microscope to identify mitosis stages and calculate a mitotic index (actual size = image size ÷ magnification)."},
     ]},
-    { head:"E · Practice & consolidation", tasks:[
-      {id:"w3e1", t:"Complete PMT “Cell Structure” Questions by Topic and self-mark."},
-      {id:"w3e2", t:"Complete PMT “Methods of Studying Cells” Questions by Topic and self-mark."},
-      {id:"w3e3", t:"Complete PMT “Cell Cycle / Mitosis” Questions by Topic and self-mark."},
-      {id:"w3e4", t:"Make flashcards for every organelle and key term this week."},
-      {id:"w3e5", t:"Write a one-page summary sheet for Cells I from memory."},
-      {id:"w3e6", t:"Redo every question you got wrong until you can do it unaided."},
+    { head:"E · Practice & consolidation · 3.2.1–3.2.2", tasks:[
+      {id:"w3e1", spec:"3.2.1.1", t:"Complete PMT “Cell Structure” Questions by Topic and self-mark.", url:L.t2, linkText:"PMT ↗"},
+      {id:"w3e2", spec:"3.2.1.3", t:"Complete PMT “Methods of Studying Cells” Questions by Topic and self-mark.", url:L.t2, linkText:"PMT ↗"},
+      {id:"w3e3", spec:"3.2.2", t:"Complete PMT “Cell Cycle / Mitosis” Questions by Topic and self-mark.", url:L.t2, linkText:"PMT ↗"},
+      {id:"w3e4", spec:"3.2", t:"Make flashcards for every organelle and key term this week."},
+      {id:"w3e5", spec:"3.2", t:"Write a one-page summary sheet for Cells I from memory."},
+      {id:"w3e6", spec:"3.2", t:"Redo every question you got wrong until you can do it unaided."},
     ]},
   ]
 },
@@ -421,35 +353,30 @@ const WEEKS = [
   no:4, dateStart:"2026-07-27", date:"W/C Mon 27 Jul — Sun 2 Aug",
   title:"Cells II — Membranes, Transport & Immunity I",
   sections:[
-    { head:"A · Cell-membrane structure", tasks:[
-      {id:"w4a1", t:"Learn the fluid-mosaic model of the cell-surface membrane."},
-      {id:"w4a2", t:"Learn the roles of phospholipids, cholesterol, channel/carrier proteins, glycoproteins and glycolipids."},
+    { head:"A · Transport across cell membranes · 3.2.3", tasks:[
+      {id:"w4a1", spec:"3.2.3", t:"Learn the fluid-mosaic model: arrangement and movement of phospholipids, proteins, glycoproteins and glycolipids; cholesterol restricts movement of other molecules."},
+      {id:"w4b1", spec:"3.2.3", t:"Learn simple diffusion, including the limitations imposed by the phospholipid bilayer."},
+      {id:"w4b2", spec:"3.2.3", t:"Learn facilitated diffusion (roles of carrier proteins and channel proteins)."},
+      {id:"w4b4", spec:"3.2.3", t:"Learn osmosis, explained in terms of water potential."},
+      {id:"w4b6", spec:"3.2.3", t:"Learn active transport (role of carrier proteins and the hydrolysis of ATP)."},
+      {id:"w4b7", spec:"3.2.3", t:"Learn co-transport, illustrated by absorption of sodium ions and glucose by cells lining the mammalian ileum."},
+      {id:"w4b3", spec:"3.2.3", t:"Explain how surface area, number of channel/carrier proteins, and concentration or water-potential gradients affect the rate of transport."},
+      {id:"w4b8", spec:"3.2.3", rp:"RP3", t:"RP3 — Produce a dilution series to make a calibration curve, and use it to find the water potential of plant tissue."},
+      {id:"w4b9", spec:"3.2.3", rp:"RP4", t:"RP4 — Investigation into the effect of a named variable on the permeability of cell-surface membranes."},
     ]},
-    { head:"B · Transport across membranes", tasks:[
-      {id:"w4b1", t:"Learn simple diffusion (down a gradient, no energy, small/non-polar molecules)."},
-      {id:"w4b2", t:"Learn facilitated diffusion (channel and carrier proteins for polar/charged molecules)."},
-      {id:"w4b3", t:"Learn the factors affecting rate of diffusion (gradient, distance, surface area)."},
-      {id:"w4b4", t:"Learn osmosis and define water potential (Ψ)."},
-      {id:"w4b5", t:"Learn the effect of solutions on animal and plant cells (hypo/hyper/isotonic)."},
-      {id:"w4b6", t:"Learn active transport (against the gradient, requires ATP and carrier proteins)."},
-      {id:"w4b7", t:"Learn co-transport using glucose/amino-acid absorption in the ileum (Na⁺/glucose)."},
-      {id:"w4b8", t:"RP3 — Learn the method for producing a calibration curve to find the water potential of plant tissue.", rp:"RP3"},
-      {id:"w4b9", t:"RP4 — Learn the method for investigating factors affecting membrane permeability (e.g. beetroot).", rp:"RP4"},
+    { head:"B · Cell recognition & the immune system I · 3.2.4", tasks:[
+      {id:"w4c1", spec:"3.2.4", t:"Learn the surface molecules that let the immune system identify pathogens, cells from other organisms of the same species, abnormal body cells and toxins."},
+      {id:"w4c2", spec:"3.2.4", t:"Learn the definition of an antigen and the effect of antigen variability on disease and disease prevention."},
+      {id:"w4c3", spec:"3.2.4", t:"Learn phagocytosis of pathogens and the subsequent destruction of ingested pathogens by lysozymes."},
+      {id:"w4c5", spec:"3.2.4", t:"Learn the cellular response: the response of T lymphocytes to a foreign antigen, and the role of antigen-presenting cells."},
+      {id:"w4c6", spec:"3.2.4", t:"Learn the role of helper T cells in stimulating cytotoxic T cells, B cells and phagocytes (other T cells are not required)."},
     ]},
-    { head:"C · Immune system I — defence & cellular response", tasks:[
-      {id:"w4c1", t:"Learn the difference between self and non-self antigens."},
-      {id:"w4c2", t:"Learn the four types of pathogen the immune system responds to."},
-      {id:"w4c3", t:"Learn the non-specific defences (physical barriers and phagocytosis)."},
-      {id:"w4c4", t:"Learn the stages of phagocytosis in detail."},
-      {id:"w4c5", t:"Learn the role of T-lymphocytes and the cell-mediated (cellular) response."},
-      {id:"w4c6", t:"Learn the role of helper T-cells in activating other cells."},
-    ]},
-    { head:"D · Practice & consolidation", tasks:[
-      {id:"w4d1", t:"Complete PMT “Cell Membranes / Transport across Membranes” Questions by Topic and self-mark."},
-      {id:"w4d2", t:"Complete PMT “Diffusion, Osmosis & Active Transport” Questions by Topic and self-mark."},
-      {id:"w4d3", t:"Make flashcards for every key term covered this week."},
-      {id:"w4d4", t:"Write a one-page summary sheet for membranes and transport from memory."},
-      {id:"w4d5", t:"Redo every question you got wrong until you can do it unaided."},
+    { head:"C · Practice & consolidation · 3.2.3–3.2.4", tasks:[
+      {id:"w4d1", spec:"3.2.3", t:"Complete PMT “Cell Membranes / Transport across Membranes” Questions by Topic and self-mark.", url:L.t2, linkText:"PMT ↗"},
+      {id:"w4d2", spec:"3.2.3", t:"Complete PMT “Diffusion, Osmosis & Active Transport” Questions by Topic and self-mark.", url:L.t2, linkText:"PMT ↗"},
+      {id:"w4d3", spec:"3.2", t:"Make flashcards for every key term covered this week."},
+      {id:"w4d4", spec:"3.2", t:"Write a one-page summary sheet for membranes and transport from memory."},
+      {id:"w4d5", spec:"3.2", t:"Redo every question you got wrong until you can do it unaided."},
     ]},
   ]
 },
@@ -457,36 +384,37 @@ const WEEKS = [
   no:5, dateStart:"2026-08-03", date:"W/C Mon 3 Aug — Sun 9 Aug",
   title:"Immunity II & Exchange I — Antibodies & Gas Exchange",
   sections:[
-    { head:"A · Immune system II — humoral response & applications", tasks:[
-      {id:"w5a1", t:"Learn the role of B-lymphocytes and the humoral response (clonal selection and expansion)."},
-      {id:"w5a2", t:"Learn antibody structure (variable/constant regions, antigen-binding sites, disulfide bridges)."},
-      {id:"w5a3", t:"Learn how antibodies destroy pathogens (agglutination, marking for phagocytosis)."},
-      {id:"w5a4", t:"Learn the difference between plasma cells and memory cells."},
-      {id:"w5a5", t:"Learn the primary and secondary responses and draw the antibody-concentration graph."},
-      {id:"w5a6", t:"Learn active vs passive and natural vs artificial immunity."},
-      {id:"w5a7", t:"Learn how vaccines work and the idea of herd immunity."},
-      {id:"w5a8", t:"Learn antigenic variation (why flu recurs)."},
-      {id:"w5a9", t:"Learn the structure and replication of HIV and how it causes AIDS."},
-      {id:"w5a10", t:"Learn why antibiotics are ineffective against viruses."},
-      {id:"w5a11", t:"Learn monoclonal antibodies (targeting, treatment, pregnancy tests) and the ELISA test."},
-      {id:"w5a12", t:"Learn the ethical issues around vaccines and monoclonal antibodies."},
+    { head:"A · Immune system II — humoral response & applications · 3.2.4", tasks:[
+      {id:"w5a1", spec:"3.2.4", t:"Learn the humoral response: response of B lymphocytes to a foreign antigen, clonal selection and the release of monoclonal antibodies."},
+      {id:"w5a2", spec:"3.2.4", t:"Learn the definition and structure of an antibody."},
+      {id:"w5a3", spec:"3.2.4", t:"Learn how the antigen-antibody complex leads to destruction of the antigen, limited to agglutination and phagocytosis of bacterial cells."},
+      {id:"w5a4", spec:"3.2.4", t:"Learn the roles of plasma cells and of memory cells in producing primary and secondary immune responses (draw the antibody-concentration graph)."},
+      {id:"w5a6", spec:"3.2.4", t:"Learn the differences between active and passive immunity."},
+      {id:"w5a7", spec:"3.2.4", t:"Learn the use of vaccines to protect individuals and populations, and the concept of herd immunity."},
+      {id:"w5a8", spec:"3.2.4", t:"Learn the structure of HIV and its replication in helper T cells."},
+      {id:"w5a9", spec:"3.2.4", t:"Learn how HIV causes the symptoms of AIDS, and why antibiotics are ineffective against viruses."},
+      {id:"w5a10", spec:"3.2.4", t:"Learn the use of monoclonal antibodies in targeting medication to specific cell types and in medical diagnosis (production details are not required)."},
+      {id:"w5a11", spec:"3.2.4", t:"Learn the use of antibodies in the ELISA test."},
+      {id:"w5a12", spec:"3.2.4", t:"Be able to discuss the ethical issues, and evaluate methodology, evidence and data, relating to vaccines and monoclonal antibodies."},
     ]},
-    { head:"B · Exchange I — surface area & gas exchange", tasks:[
-      {id:"w5b1", t:"Learn the relationship between size and surface-area-to-volume ratio."},
-      {id:"w5b2", t:"Learn why larger organisms need specialised exchange surfaces."},
-      {id:"w5b3", t:"Learn the features of an efficient exchange surface (large SA, thin, steep gradient)."},
-      {id:"w5b4", t:"Learn gas exchange in single-celled organisms."},
-      {id:"w5b5", t:"Learn gas exchange in insects (spiracles, tracheae, tracheoles) and how water loss is limited."},
-      {id:"w5b6", t:"Learn gas exchange in fish (gills, lamellae, counter-current flow)."},
-      {id:"w5b7", t:"Learn gas exchange in plants (leaf structure, stomata, guard cells)."},
-      {id:"w5b8", t:"Learn the adaptations of xerophytes to reduce water loss."},
+    { head:"B · Surface area to volume ratio & gas exchange · 3.3.1 / 3.3.2", tasks:[
+      {id:"w5b1", spec:"3.3.1", t:"Learn the relationship between the size of an organism/structure and its surface-area-to-volume ratio, and its relationship to metabolic rate."},
+      {id:"w5b2", spec:"3.3.1", t:"Learn how changes to body shape and the development of exchange systems in larger organisms are adaptations as the SA:V ratio reduces."},
+      {id:"w5b4", spec:"3.3.2", t:"Learn gas exchange across the body surface of a single-celled organism."},
+      {id:"w5b5", spec:"3.3.2", t:"Learn gas exchange in the tracheal system of an insect (tracheae, tracheoles and spiracles)."},
+      {id:"w5b6", spec:"3.3.2", t:"Learn gas exchange across the gills of a fish (lamellae and filaments, including the counter-current principle)."},
+      {id:"w5b7", spec:"3.3.2", t:"Learn gas exchange in the leaves of dicotyledonous plants (mesophyll and stomata)."},
+      {id:"w5b8", spec:"3.3.2", t:"Learn the structural and functional compromises between efficient gas exchange and limiting water loss in terrestrial insects and xerophytic plants."},
+      {id:"w5b9", spec:"3.3.2", t:"Learn the gross structure of the human gas exchange system (alveoli, bronchioles, bronchi, trachea and lungs) and the features of the alveolar epithelium."},
+      {id:"w5b11", spec:"3.3.2", t:"Learn ventilation and gas exchange in the lungs: the breathing mechanism, including the diaphragm and the antagonistic external and internal intercostal muscles producing pressure changes."},
+      {id:"w5b12", spec:"3.3.2", t:"Practise interpreting data on lung disease, and on the effects of pollution and smoking, and distinguishing correlation from causation."},
     ]},
-    { head:"C · Practice & consolidation", tasks:[
-      {id:"w5c1", t:"Complete PMT “Immune System / Defence Against Disease” Questions by Topic and self-mark."},
-      {id:"w5c2", t:"Complete PMT “Exchange Surfaces / Gas Exchange” Questions by Topic and self-mark."},
-      {id:"w5c3", t:"Make flashcards for every key term covered this week."},
-      {id:"w5c4", t:"Write one-page summary sheets for immunity and gas exchange from memory."},
-      {id:"w5c5", t:"Redo every question you got wrong until you can do it unaided."},
+    { head:"C · Practice & consolidation · 3.2.4 / 3.3.1–3.3.2", tasks:[
+      {id:"w5c1", spec:"3.2.4", t:"Complete PMT “Immune System / Defence Against Disease” Questions by Topic and self-mark.", url:L.t2, linkText:"PMT ↗"},
+      {id:"w5c2", spec:"3.3.1–3.3.2", t:"Complete PMT “Exchange Surfaces / Gas Exchange” Questions by Topic and self-mark.", url:L.t3, linkText:"PMT ↗"},
+      {id:"w5c3", spec:"3.2–3.3", t:"Make flashcards for every key term covered this week."},
+      {id:"w5c4", spec:"3.2–3.3", t:"Write one-page summary sheets for immunity and gas exchange from memory."},
+      {id:"w5c5", spec:"3.2–3.3", t:"Redo every question you got wrong until you can do it unaided."},
     ]},
   ]
 },
@@ -494,37 +422,33 @@ const WEEKS = [
   no:6, dateStart:"2026-08-10", date:"W/C Mon 10 Aug — Sun 16 Aug",
   title:"Exchange II — Digestion & Mass Transport in Animals",
   sections:[
-    { head:"A · Digestion & absorption", tasks:[
-      {id:"w6a1", t:"Learn carbohydrate digestion (amylase, maltase, membrane-bound disaccharidases)."},
-      {id:"w6a2", t:"Learn lipid digestion (bile salts, emulsification, lipase, micelles)."},
-      {id:"w6a3", t:"Learn protein digestion (endopeptidases, exopeptidases, dipeptidases)."},
-      {id:"w6a4", t:"Learn absorption in the ileum (role of micelles, co-transport of glucose/amino acids)."},
-      {id:"w6a5", t:"Learn how the villi/ileum are adapted for absorption."},
+    { head:"A · Digestion & absorption · 3.3.3", tasks:[
+      {id:"w6a1", spec:"3.3.3", t:"Learn digestion of carbohydrates by amylases and membrane-bound disaccharidases."},
+      {id:"w6a2", spec:"3.3.3", t:"Learn digestion of lipids by lipase, including the action of bile salts."},
+      {id:"w6a3", spec:"3.3.3", t:"Learn digestion of proteins by endopeptidases, exopeptidases and membrane-bound dipeptidases."},
+      {id:"w6a4", spec:"3.3.3", t:"Learn absorption in the ileum: co-transport of amino acids and monosaccharides, and the role of micelles in the absorption of lipids."},
     ]},
-    { head:"B · Mass transport in animals — blood", tasks:[
-      {id:"w6b1", t:"Learn haemoglobin structure and its role in oxygen transport."},
-      {id:"w6b2", t:"Learn the oxygen dissociation curve and explain its S-shape (cooperative binding)."},
-      {id:"w6b3", t:"Learn the Bohr effect (the effect of CO₂/pH on the curve)."},
-      {id:"w6b4", t:"Learn how dissociation curves differ between organisms (altitude, small mammals)."},
-      {id:"w6b5", t:"Learn the loading, transport and unloading of oxygen."},
+    { head:"B · Mass transport in animals: blood & haemoglobin · 3.3.4.1", tasks:[
+      {id:"w6b1", spec:"3.3.4.1", t:"Learn that haemoglobin is a protein with a quaternary structure, and the role of haemoglobin and red blood cells in transporting oxygen."},
+      {id:"w6b2", spec:"3.3.4.1", t:"Learn the loading, transport and unloading of oxygen using the oxyhaemoglobin dissociation curve, and the cooperative nature of oxygen binding."},
+      {id:"w6b3", spec:"3.3.4.1", t:"Learn the effect of carbon dioxide concentration on the dissociation of oxyhaemoglobin (the Bohr effect)."},
+      {id:"w6b4", spec:"3.3.4.1", t:"Learn that many animals are adapted by possessing different haemoglobins with different oxygen-transport properties."},
     ]},
-    { head:"C · Circulatory system", tasks:[
-      {id:"w6c1", t:"Learn the double circulatory system in mammals."},
-      {id:"w6c2", t:"Learn the names and functions of the main blood vessels (aorta, vena cava, pulmonary, renal, coronary)."},
-      {id:"w6c3", t:"Learn the structure and function of arteries, veins and capillaries."},
-      {id:"w6c4", t:"Learn the external and internal structure of the heart."},
-      {id:"w6c5", t:"Learn the cardiac cycle (atrial systole, ventricular systole, diastole) and pressure changes."},
-      {id:"w6c6", t:"Learn the role of valves in the heart and veins."},
-      {id:"w6c7", t:"Learn how tissue fluid is formed and returned (hydrostatic and oncotic pressure)."},
-      {id:"w6c8", t:"RP5 — Learn the method for dissecting a gas-exchange or mass-transport system (e.g. heart).", rp:"RP5"},
+    { head:"C · Circulatory system · 3.3.4.1", tasks:[
+      {id:"w6c1", spec:"3.3.4.1", t:"Learn the general pattern of blood circulation in a mammal (names required only for the coronary arteries and the vessels entering/leaving the heart, lungs and kidneys)."},
+      {id:"w6c3", spec:"3.3.4.1", t:"Learn the structure of arteries, arterioles and veins in relation to their function."},
+      {id:"w6c4", spec:"3.3.4.1", t:"Learn the gross structure of the human heart, and the pressure/volume changes and valve movements of the cardiac cycle that maintain unidirectional flow."},
+      {id:"w6c7", spec:"3.3.4.1", t:"Learn the structure of capillaries and capillary beds as exchange surfaces, and the formation of tissue fluid and its return to the circulatory system."},
+      {id:"w6c9", spec:"3.3.4.1", t:"Practise analysing data on the cardiac cycle and on cardiovascular-disease risk factors, and distinguishing correlation from causation."},
+      {id:"w6c8", spec:"3.3.4.1", rp:"RP5", t:"RP5 — Dissection of an animal or plant gas exchange system or mass transport system, or an organ within such a system."},
     ]},
-    { head:"D · Practice & consolidation", tasks:[
-      {id:"w6d1", t:"Complete PMT “Digestion and Absorption” Questions by Topic and self-mark."},
-      {id:"w6d2", t:"Complete PMT “Mass Transport / Haemoglobin” Questions by Topic and self-mark."},
-      {id:"w6d3", t:"Complete PMT “Mass Transport in Animals / The Heart” Questions by Topic and self-mark."},
-      {id:"w6d4", t:"Make flashcards for every key term covered this week."},
-      {id:"w6d5", t:"Write one-page summary sheets for digestion and mass transport from memory."},
-      {id:"w6d6", t:"Redo every question you got wrong until you can do it unaided."},
+    { head:"D · Practice & consolidation · 3.3.3–3.3.4.1", tasks:[
+      {id:"w6d1", spec:"3.3.3", t:"Complete PMT “Digestion and Absorption” Questions by Topic and self-mark.", url:L.t3, linkText:"PMT ↗"},
+      {id:"w6d2", spec:"3.3.4.1", t:"Complete PMT “Mass Transport / Haemoglobin” Questions by Topic and self-mark.", url:L.t3, linkText:"PMT ↗"},
+      {id:"w6d3", spec:"3.3.4.1", t:"Complete PMT “Mass Transport in Animals / The Heart” Questions by Topic and self-mark.", url:L.t3, linkText:"PMT ↗"},
+      {id:"w6d4", spec:"3.3", t:"Make flashcards for every key term covered this week."},
+      {id:"w6d5", spec:"3.3", t:"Write one-page summary sheets for digestion and mass transport from memory."},
+      {id:"w6d6", spec:"3.3", t:"Redo every question you got wrong until you can do it unaided."},
     ]},
   ]
 },
@@ -532,75 +456,109 @@ const WEEKS = [
   no:7, dateStart:"2026-08-17", date:"W/C Mon 17 Aug — Sun 23 Aug",
   title:"Plant Transport & Genetics I — Protein Synthesis",
   sections:[
-    { head:"A · Mass transport in plants", tasks:[
-      {id:"w7a1", t:"Learn the structure and function of xylem."},
-      {id:"w7a2", t:"Learn the cohesion-tension theory of water transport in the xylem."},
-      {id:"w7a3", t:"Learn transpiration and the factors affecting its rate (light, temperature, humidity, air movement)."},
-      {id:"w7a4", t:"Learn how a potometer measures transpiration/water uptake."},
-      {id:"w7a5", t:"Learn the structure and function of phloem."},
-      {id:"w7a6", t:"Learn the mass-flow hypothesis of translocation (source to sink)."},
-      {id:"w7a7", t:"Learn the evidence for and against mass flow."},
+    { head:"A · Mass transport in plants · 3.3.4.2", tasks:[
+      {id:"w7a1", spec:"3.3.4.2", t:"Learn that xylem transports water in the stem and leaves, and the cohesion-tension theory of water transport in the xylem."},
+      {id:"w7a4", spec:"3.3.4.2", rp:"AT b", t:"Learn how a potometer investigates the effect of a named environmental variable on the rate of transpiration."},
+      {id:"w7a5", spec:"3.3.4.2", t:"Learn that phloem transports organic substances, and the mass-flow hypothesis for translocation."},
+      {id:"w7a7", spec:"3.3.4.2", t:"Be able to interpret evidence from tracer and ringing experiments and evaluate the evidence for and against the mass-flow hypothesis."},
     ]},
-    { head:"B · Genetics I — DNA, genes & protein synthesis", tasks:[
-      {id:"w7b1", t:"Learn the definitions of gene, allele, genome and proteome."},
-      {id:"w7b2", t:"Learn that a gene is a base sequence coding for a polypeptide (or functional RNA)."},
-      {id:"w7b3", t:"Learn how DNA is organised in eukaryotes (histones → chromosomes)."},
-      {id:"w7b4", t:"Learn how DNA differs in prokaryotes and in mitochondria/chloroplasts (short, circular, no histones)."},
-      {id:"w7b5", t:"Learn the features of the genetic code (triplet, non-overlapping, degenerate, universal)."},
-      {id:"w7b6", t:"Learn the structure of mRNA and tRNA."},
-      {id:"w7b7", t:"Learn transcription (RNA polymerase, template strand, pre-mRNA, splicing of introns/exons)."},
-      {id:"w7b8", t:"Learn translation (ribosomes, tRNA, anticodons, peptide-bond formation)."},
+    { head:"B · DNA, genes & chromosomes · 3.4.1", tasks:[
+      {id:"w7b3", spec:"3.4.1", t:"Learn how DNA is organised: short, circular, protein-free in prokaryotes; long, linear, associated with histones (forming chromosomes) in the eukaryotic nucleus; short and circular in mitochondria and chloroplasts."},
+      {id:"w7b2", spec:"3.4.1", t:"Learn that a gene is a base sequence of DNA coding for the amino-acid sequence of a polypeptide or a functional RNA, and occupies a fixed position called a locus."},
+      {id:"w7b5", spec:"3.4.1", t:"Learn that a triplet of DNA bases codes for a specific amino acid, and that the genetic code is <q>universal, non-overlapping and degenerate</q>."},
+      {id:"w7b5b", spec:"3.4.1", t:"Learn that much eukaryotic nuclear DNA does not code for polypeptides, including non-coding multiple repeats between genes, and introns separating the coding exons within a gene."},
     ]},
-    { head:"C · Practice & consolidation", tasks:[
-      {id:"w7c1", t:"Complete PMT “Mass Transport in Plants / Transpiration” Questions by Topic and self-mark."},
-      {id:"w7c2", t:"Complete PMT “DNA, Genes and Chromosomes” Questions by Topic and self-mark."},
-      {id:"w7c3", t:"Complete PMT “Protein Synthesis / Transcription & Translation” Questions by Topic and self-mark."},
-      {id:"w7c4", t:"Make flashcards for every key term covered this week."},
-      {id:"w7c5", t:"Write one-page summary sheets for plant transport and protein synthesis from memory."},
-      {id:"w7c6", t:"Redo every question you got wrong until you can do it unaided."},
+    { head:"C · DNA & protein synthesis · 3.4.2", tasks:[
+      {id:"w7b1", spec:"3.4.2", t:"Learn the genome as the complete set of genes in a cell, and the proteome as the full range of proteins a cell can produce."},
+      {id:"w7b6", spec:"3.4.2", t:"Learn the structure of molecules of mRNA and of tRNA."},
+      {id:"w7b7", spec:"3.4.2", t:"Learn transcription (RNA polymerase joining mRNA nucleotides); in eukaryotes, pre-mRNA is spliced to form mRNA."},
+      {id:"w7b8", spec:"3.4.2", t:"Learn translation as the production of polypeptides from the codons carried by mRNA, and the roles of ribosomes, tRNA and ATP (specific codons are not recalled)."},
+    ]},
+    { head:"D · Practice & consolidation · 3.3.4.2 / 3.4.1–3.4.2", tasks:[
+      {id:"w7c1", spec:"3.3.4.2", t:"Complete PMT “Mass Transport in Plants / Transpiration” Questions by Topic and self-mark.", url:L.t3, linkText:"PMT ↗"},
+      {id:"w7c2", spec:"3.4.1", t:"Complete PMT “DNA, Genes and Chromosomes” Questions by Topic and self-mark.", url:L.t4, linkText:"PMT ↗"},
+      {id:"w7c3", spec:"3.4.2", t:"Complete PMT “Protein Synthesis / Transcription & Translation” Questions by Topic and self-mark.", url:L.t4, linkText:"PMT ↗"},
+      {id:"w7c4", spec:"3.3–3.4", t:"Make flashcards for every key term covered this week."},
+      {id:"w7c5", spec:"3.3–3.4", t:"Write one-page summary sheets for plant transport and protein synthesis from memory."},
+      {id:"w7c6", spec:"3.3–3.4", t:"Redo every question you got wrong until you can do it unaided."},
     ]},
   ]
 },
 {
   no:8, dateStart:"2026-08-24", date:"W/C Mon 24 Aug — Sun 30 Aug",
-  title:"Genetics II, Biodiversity & Final Consolidation",
+  title:"Genetics II, Biodiversity & Past Papers I",
   sections:[
-    { head:"A · Genetic diversity & meiosis", tasks:[
-      {id:"w8a1", t:"Learn how meiosis produces genetically variable, haploid gametes."},
-      {id:"w8a2", t:"Learn the two divisions of meiosis (meiosis I and II)."},
-      {id:"w8a3", t:"Learn how independent segregation of homologous chromosomes creates variation."},
-      {id:"w8a4", t:"Learn how crossing over creates variation."},
-      {id:"w8a5", t:"Learn how to calculate the number of possible chromosome combinations (2ⁿ)."},
-      {id:"w8a6", t:"Learn gene mutations (substitution, deletion) and their effect on the amino-acid sequence."},
-      {id:"w8a7", t:"Learn chromosome mutations (non-disjunction)."},
+    { head:"A · Genetic diversity from mutation or meiosis · 3.4.3", tasks:[
+      {id:"w8a6", spec:"3.4.3", t:"Learn that gene mutations change the base sequence (base substitution and base deletion), arise spontaneously during replication, and that the degenerate code means not all substitutions change the amino acid; mutagenic agents raise the mutation rate."},
+      {id:"w8a7", spec:"3.4.3", t:"Learn that mutations in chromosome number can arise by chromosome non-disjunction during meiosis."},
+      {id:"w8a1", spec:"3.4.3", t:"Learn that two nuclear divisions in meiosis usually produce four haploid daughter cells from a single diploid parent cell."},
+      {id:"w8a3", spec:"3.4.3", t:"Learn how independent segregation of homologous chromosomes produces genetically different daughter cells."},
+      {id:"w8a4", spec:"3.4.3", t:"Learn how crossing over between homologous chromosomes results in further genetic variation."},
+      {id:"w8a8", spec:"3.4.3", t:"Be able to explain the different outcomes of mitosis and meiosis, and recognise where meiosis occurs in an unfamiliar life cycle."},
+      {id:"w8a9", spec:"3.4.3", t:"Explain how random fertilisation of haploid gametes further increases genetic variation, and use 2ⁿ to calculate possible chromosome combinations."},
     ]},
-    { head:"B · Genetic diversity & adaptation", tasks:[
-      {id:"w8b1", t:"Learn how genetic diversity arises (mutation and meiosis)."},
-      {id:"w8b2", t:"Learn natural selection (variation, selection pressure, differential survival, allele-frequency change)."},
-      {id:"w8b3", t:"Learn directional and stabilising selection with examples."},
-      {id:"w8b4", t:"Learn how selection produces adaptation (e.g. antibiotic resistance)."},
-      {id:"w8b5", t:"Learn the difference between anatomical, physiological and behavioural adaptations."},
+    { head:"B · Genetic diversity & adaptation · 3.4.4", tasks:[
+      {id:"w8b1", spec:"3.4.4", t:"Learn genetic diversity as the number of different alleles of genes in a population, and that it enables natural selection to occur."},
+      {id:"w8b2", spec:"3.4.4", t:"Learn the principles of natural selection: random mutation makes new alleles; a beneficial allele increases reproductive success and is inherited, increasing in frequency over generations."},
+      {id:"w8b3", spec:"3.4.4", t:"Learn directional selection (antibiotic resistance in bacteria) and stabilising selection (human birth weights)."},
+      {id:"w8b5", spec:"3.4.4", t:"Learn that natural selection produces species better adapted to their environment, and that adaptations may be anatomical, physiological or behavioural."},
+      {id:"w8b6", spec:"3.4.4", rp:"RP6", t:"RP6 — Use of aseptic techniques to investigate the effect of antimicrobial substances on microbial growth."},
     ]},
-    { head:"C · Species, taxonomy & biodiversity", tasks:[
-      {id:"w8c1", t:"Learn the definition of a species and the binomial naming system."},
-      {id:"w8c2", t:"Learn courtship behaviour and its role in species recognition and reproduction."},
-      {id:"w8c3", t:"Learn the classification hierarchy and the three domains."},
-      {id:"w8c4", t:"Learn how genome sequencing and molecular comparisons clarify relationships."},
-      {id:"w8c5", t:"Learn how to interpret phylogenetic trees."},
-      {id:"w8c6", t:"Learn species diversity and how to calculate the index of diversity (d)."},
-      {id:"w8c7", t:"Learn how farming affects biodiversity and the conflicts involved."},
-      {id:"w8c8", t:"Learn how genetic diversity within a species is compared (characteristics, base/amino-acid sequences)."},
-      {id:"w8c9", t:"Learn quantitative sampling, mean and standard deviation for investigating diversity."},
-      {id:"w8c10", t:"RP6 — Learn aseptic technique for investigating antimicrobial effects on microbial growth.", rp:"RP6"},
+    { head:"C · Species, taxonomy & biodiversity · 3.4.5 / 3.4.6 / 3.4.7", tasks:[
+      {id:"w8c1", spec:"3.4.5", t:"Learn that two organisms are the same species if they produce fertile offspring, and the role of courtship behaviour in species recognition and successful mating."},
+      {id:"w8c3", spec:"3.4.5", t:"Learn the phylogenetic hierarchy of taxa: domain, kingdom, phylum, class, order, family, genus, species (recall of the three-domain or five-kingdom systems is not required)."},
+      {id:"w8c3b", spec:"3.4.5", t:"Learn that each species has a binomial of its genus and species (e.g. Homo sapiens), and that immunology and genome sequencing help clarify evolutionary relationships."},
+      {id:"w8c6", spec:"3.4.6", t:"Learn species richness, the index of diversity, and calculate d = N(N−1) ÷ Σn(n−1)."},
+      {id:"w8c7", spec:"3.4.6", t:"Learn that farming techniques reduce biodiversity, and the balance between conservation and farming."},
+      {id:"w8c8", spec:"3.4.7", t:"Learn how genetic diversity within or between species is compared: frequency of observable characteristics, base sequence of DNA and of mRNA, and amino-acid sequence of proteins."},
+      {id:"w8c9", spec:"3.4.7", t:"Learn quantitative investigation of variation: collecting random samples, and calculating and interpreting a mean and its standard deviation (SD is not calculated in written papers)."},
     ]},
-    { head:"D · Final consolidation — all of Year 1", tasks:[
-      {id:"w8d1", t:"Complete PMT “Meiosis / Genetic Diversity” Questions by Topic and self-mark."},
-      {id:"w8d2", t:"Complete PMT “Natural Selection / Adaptation” Questions by Topic and self-mark."},
-      {id:"w8d3", t:"Complete PMT “Species and Taxonomy / Biodiversity” Questions by Topic and self-mark."},
-      {id:"w8d4", t:"Sit the full section-by-section self-test on Sections 1–4 set by your tutor."},
-      {id:"w8d5", t:"Review every flashcard set made across the eight weeks."},
-      {id:"w8d6", t:"Identify your three weakest topics and redo their PMT questions."},
-      {id:"w8d7", t:"Write the whole Year 1 spec from memory as a checklist and RAG-rate each point."},
+    { head:"D · Topic practice & review · 3.4", tasks:[
+      {id:"w8d1", spec:"3.4.3", t:"Complete PMT “Meiosis / Genetic Diversity” Questions by Topic and self-mark.", url:L.t4, linkText:"PMT ↗"},
+      {id:"w8d2", spec:"3.4.4", t:"Complete PMT “Natural Selection / Adaptation” Questions by Topic and self-mark.", url:L.t4, linkText:"PMT ↗"},
+      {id:"w8d3", spec:"3.4.5–3.4.7", t:"Complete PMT “Species and Taxonomy / Biodiversity” Questions by Topic and self-mark.", url:L.t4, linkText:"PMT ↗"},
+      {id:"w8d5", spec:"3.4", t:"Make and review flashcards for all Section 4 (genetics & biodiversity) key terms.", url:L.t4, linkText:"PMT ↗"},
+    ]},
+    { head:"E · AS past papers I — sit each timed (1h30m, 75 marks), then self-mark and correct every lost mark", tasks:[
+      {id:"w8e1", spec:"3.1–3.4", t:"AS Specimen — Paper 1: sit timed, then self-mark with the mark scheme and correct every lost mark.", url:L.p1, linkText:"QP + MS ↗"},
+      {id:"w8e2", spec:"3.1–3.4", t:"AS Specimen — Paper 2: sit timed, then self-mark with the mark scheme and correct every lost mark.", url:L.p2, linkText:"QP + MS ↗"},
+      {id:"w8e3", spec:"3.1–3.4", t:"June 2016 — Paper 1: sit timed, then self-mark and correct every lost mark.", url:L.p1, linkText:"QP + MS ↗"},
+      {id:"w8e4", spec:"3.1–3.4", t:"June 2016 — Paper 2: sit timed, then self-mark and correct every lost mark.", url:L.p2, linkText:"QP + MS ↗"},
+      {id:"w8e5", spec:"3.1–3.4", t:"June 2017 — Paper 1: sit timed, then self-mark and correct every lost mark.", url:L.p1, linkText:"QP + MS ↗"},
+      {id:"w8e6", spec:"3.1–3.4", t:"June 2017 — Paper 2: sit timed, then self-mark and correct every lost mark.", url:L.p2, linkText:"QP + MS ↗"},
+    ]},
+  ]
+},
+{
+  no:9, dateStart:"2026-08-31", date:"W/C Mon 31 Aug — Sun 6 Sep",
+  title:"AS Past Papers II & Final Review",
+  sections:[
+    { head:"A · AS past papers II — work through in order; the most recent papers best reflect the current exam style", tasks:[
+      {id:"w9a1", spec:"3.1–3.4", t:"June 2018 — Paper 1: sit timed (1h30m), then self-mark and correct every lost mark.", url:L.p1, linkText:"QP + MS ↗"},
+      {id:"w9a2", spec:"3.1–3.4", t:"June 2018 — Paper 2: sit timed (1h30m), then self-mark and correct every lost mark.", url:L.p2, linkText:"QP + MS ↗"},
+      {id:"w9a3", spec:"3.1–3.4", t:"June 2019 — Paper 1: sit timed (1h30m), then self-mark and correct every lost mark.", url:L.p1, linkText:"QP + MS ↗"},
+      {id:"w9a4", spec:"3.1–3.4", t:"June 2019 — Paper 2: sit timed (1h30m), then self-mark and correct every lost mark.", url:L.p2, linkText:"QP + MS ↗"},
+      {id:"w9a5", spec:"3.1–3.4", t:"June 2020 — Paper 1: sit timed (1h30m), then self-mark and correct every lost mark.", url:L.p1, linkText:"QP + MS ↗"},
+      {id:"w9a6", spec:"3.1–3.4", t:"June 2020 — Paper 2: sit timed (1h30m), then self-mark and correct every lost mark.", url:L.p2, linkText:"QP + MS ↗"},
+      {id:"w9a7", spec:"3.1–3.4", t:"June 2021 — Paper 1: sit timed (1h30m), then self-mark and correct every lost mark.", url:L.p1, linkText:"QP + MS ↗"},
+      {id:"w9a8", spec:"3.1–3.4", t:"June 2021 — Paper 2: sit timed (1h30m), then self-mark and correct every lost mark.", url:L.p2, linkText:"QP + MS ↗"},
+      {id:"w9a9", spec:"3.1–3.4", t:"June 2022 — Paper 1: sit timed (1h30m), then self-mark and correct every lost mark.", url:L.p1, linkText:"QP + MS ↗"},
+      {id:"w9a10", spec:"3.1–3.4", t:"June 2022 — Paper 2: sit timed (1h30m), then self-mark and correct every lost mark.", url:L.p2, linkText:"QP + MS ↗"},
+      {id:"w9a11", spec:"3.1–3.4", t:"June 2023 — Paper 1: sit timed (1h30m), then self-mark and correct every lost mark.", url:L.p1, linkText:"QP + MS ↗"},
+      {id:"w9a12", spec:"3.1–3.4", t:"June 2023 — Paper 2: sit timed (1h30m), then self-mark and correct every lost mark.", url:L.p2, linkText:"QP + MS ↗"},
+      {id:"w9a13", spec:"3.1–3.4", t:"June 2024 — Paper 1: sit timed (1h30m), then self-mark and correct every lost mark.", url:L.p1, linkText:"QP + MS ↗"},
+      {id:"w9a14", spec:"3.1–3.4", t:"June 2024 — Paper 2: sit timed (1h30m), then self-mark and correct every lost mark.", url:L.p2, linkText:"QP + MS ↗"},
+    ]},
+    { head:"B · Examiner reports — how to use them", tasks:[
+      {id:"w9b1", spec:"—", t:"Open the AQA examiner reports: on the AQA page, filter by “Examiner report” and the exam series you want.", url:L.aqa, linkText:"AQA ↗"},
+      {id:"w9b2", spec:"—", t:"For each paper you sat, find the examiner's comments on the exact questions you dropped marks on."},
+      {id:"w9b3", spec:"—", t:"Keep a running “common errors” list of the recurring mistakes examiners flag (e.g. writing “gene” when you mean “allele”, vague water-potential answers)."},
+      {id:"w9b4", spec:"—", t:"Re-attempt every question you lost marks on, writing the answer the way the examiner report says a full-mark answer should read."},
+    ]},
+    { head:"C · Final consolidation · 3.1–3.4", tasks:[
+      {id:"w9c1", spec:"3.1–3.4", t:"Review every flashcard set made across the whole programme."},
+      {id:"w9c2", spec:"3.1–3.4", t:"From your paper scores, list your three weakest topics and redo their PMT Questions by Topic.", url:L.t4, linkText:"PMT ↗"},
+      {id:"w9c3", spec:"3.1–3.4", t:"Write the whole Year 1 spec from memory as a checklist and RAG-rate (red/amber/green) each point; revisit every red before the programme ends."},
     ]},
   ]
 },
@@ -615,19 +573,11 @@ let state = {};
 let openState = {};
 
 function load(){
-  try { state = JSON.parse(localStorage.getItem(STORE_KEY)) || {}; }
-  catch(e){ state = {}; }
-  try { openState = JSON.parse(localStorage.getItem(OPEN_KEY)) || {}; }
-  catch(e){ openState = {}; }
+  try { state = JSON.parse(localStorage.getItem(STORE_KEY)) || {}; } catch(e){ state = {}; }
+  try { openState = JSON.parse(localStorage.getItem(OPEN_KEY)) || {}; } catch(e){ openState = {}; }
 }
-function save(){
-  try { localStorage.setItem(STORE_KEY, JSON.stringify(state)); }
-  catch(e){ /* storage unavailable — progress will not persist this session */ }
-}
-function saveOpen(){
-  try { localStorage.setItem(OPEN_KEY, JSON.stringify(openState)); }
-  catch(e){}
-}
+function save(){ try { localStorage.setItem(STORE_KEY, JSON.stringify(state)); } catch(e){} }
+function saveOpen(){ try { localStorage.setItem(OPEN_KEY, JSON.stringify(openState)); } catch(e){} }
 
 /* ============================================================
    RENDER
@@ -647,10 +597,11 @@ function currentWeekNo(){
 const CURRENT = currentWeekNo();
 
 function esc(s){ return s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;"); }
+/* allow only the <q> tag we use for spec quotes, after escaping */
+function fmt(s){ return esc(s).replace(/&lt;q&gt;/g,"<q>").replace(/&lt;\/q&gt;/g,"</q>"); }
 
 function buildWeek(w){
   const isNow = (w.no === CURRENT);
-  // default open: current week open, or week 1 if outside range; others follow saved state
   let open;
   if (w.no in openState) open = openState[w.no];
   else open = CURRENT ? isNow : (w.no === 1);
@@ -660,11 +611,13 @@ function buildWeek(w){
     let tasksHTML = "";
     for (const t of s.tasks){
       const checked = state[t.id] ? "checked" : "";
-      const rp = t.rp ? `<span class="rp">${t.rp}</span>` : "";
+      const spec = t.spec ? `<span class="spec">${esc(t.spec)}</span>` : "";
+      const rp = t.rp ? `<span class="rp">${esc(t.rp)}</span>` : "";
+      const link = t.url ? ` <a class="tasklink" href="${t.url}" target="_blank" rel="noopener noreferrer">${esc(t.linkText || "open ↗")}</a>` : "";
       tasksHTML += `
         <div class="task">
           <input type="checkbox" id="${t.id}" data-id="${t.id}" ${checked}>
-          <label for="${t.id}">${rp}${esc(t.t.replace(/^RP\d\s+—\s+/,""))}</label>
+          <label for="${t.id}">${spec}${rp}${fmt(t.t.replace(/^RP\d\s+—\s+/,"").replace(/^AT\s\w\s+—\s+/,""))}</label>${link}
         </div>`;
     }
     sectionsHTML += `
@@ -763,21 +716,15 @@ function wireEvents(){
   });
 
   document.getElementById("expandAll").addEventListener("click", () => {
-    document.querySelectorAll(".week").forEach(c => {
-      c.classList.add("open"); openState[c.dataset.week] = true;
-    });
+    document.querySelectorAll(".week").forEach(c => { c.classList.add("open"); openState[c.dataset.week] = true; });
     saveOpen();
   });
   document.getElementById("collapseAll").addEventListener("click", () => {
-    document.querySelectorAll(".week").forEach(c => {
-      c.classList.remove("open"); openState[c.dataset.week] = false;
-    });
+    document.querySelectorAll(".week").forEach(c => { c.classList.remove("open"); openState[c.dataset.week] = false; });
     saveOpen();
   });
   document.getElementById("jumpNow").addEventListener("click", () => {
-    const target = CURRENT
-      ? document.querySelector(`.week[data-week="${CURRENT}"]`)
-      : document.querySelector(".week");
+    const target = CURRENT ? document.querySelector(`.week[data-week="${CURRENT}"]`) : document.querySelector(".week");
     if (target){
       target.classList.add("open");
       openState[target.dataset.week] = true; saveOpen();
